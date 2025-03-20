@@ -1,40 +1,34 @@
-import { useState } from "react";
+// import { useState } from "react";
 import "./App.css";
-import HomePage from "./Pages/Home";
+import NavBar from "./components/NavBar";
+import { Route, Routes } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useContext } from "react";
+import ThemeContext from "./context/ThemeContext.jsx";
+import HomePage from "./Pages/Home.jsx";
 import Recipes from "./Pages/Recipes";
 import Account from "./Pages/Account";
 import Login from "./Pages/Login";
-import NFP from "./Pages/NotFoundPage";
-import NavBar from "./components/NavBar";
-import { Routes, Route, Link } from "react-router-dom";
+import NFP from "./Pages/NFP.jsx";
+
+const router = createBrowserRouter([
+  { path: "/", element: <HomePage /> },
+  { path: "/recipes", element: <Recipes /> },
+  { path: "/account", element: <Account /> },
+  { path: "/login", element: <Login /> },
+  { path: "*", element: <NFP /> }, // Catch-all route for 404
+]);
 
 function App() {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const mainClass = theme ? "light-mode" : "dark-mode";
+
   return (
     <>
-      {/* <NavBar /> */}
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/Recipes">Recipes</Link>
-          </li>
-          <li>
-            <Link to="/Account">Account</Link>
-          </li>
-          <li>
-            <Link to="/Login">Login</Link>
-          </li>
-        </ul>
-      </nav>
-      <Routes>
-        <Route path="/" element={<HomePage />}></Route>
-        <Route path="/Recipes" element={<Recipes />}></Route>
-        <Route path="/Account" element={<Account />}></Route>
-        <Route path="/Login" element={<Login />}></Route>
-        <Route path="*" element={<NFP />}></Route>
-      </Routes>
+      {/* <main className={mainClass}> */}
+      {/* <button onClick={toggleTheme}>{mainClass}</button> */}
+      <RouterProvider router={router} />
+      {/* </main> */}
     </>
   );
 }

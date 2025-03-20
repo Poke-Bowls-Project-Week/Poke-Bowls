@@ -1,42 +1,296 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ============================= */
+/* Light Mode & Dark Mode */
+/* ============================= */
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #bfedef;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================= */
+/* Nav */
+/* ============================= */
+
+nav {
+  background-color: #222;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  color: #bfedef;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 15px;
+  transition: color 0.3s, background-color 0.3s;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+}
+
+/* ============================= */
+/* Food Card Styling */
+/* ============================= */
+.foodCard {
+  display: flex;
+  align-items: center;
+  background-color: #222; /* Dark theme background */
+  padding: 15px;
+  width: 100%;
+  max-width: 450px; /* Slightly wider for better layout */
+  gap: 15px;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.foodCard:hover {
+  transform: translateY(-2px); /* Slight lift effect on hover */
+  box-shadow: 0px 4px 10px #bfedef; /* Consistent shadow */
+}
+
+.foodCard img {
+  width: 120px;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15); /* Image shadow */
+}
+
+.foodCard h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #bfedef; /* Light blue text */
+}
+
+.foodCard div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ============================= */
+/* Food Card Button */
+/* ============================= */
+.foodCard button {
+  padding: 8px 12px;
+  background-color: #0d5857;
+  color: #bfedef;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.foodCard button:hover {
+  background-color: #073b3a;
+  transform: scale(1.05); /* Slight button pop on hover */
+}
+
+/* ============================= */
+/* Responsive Design */
+/* ============================= */
+@media (max-width: 768px) {
+  .foodCard {
+    flex-direction: column; /* Stack items for mobile */
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .foodCard img {
+    width: 100px;
+  }
+
+  .foodCard div {
+    align-items: center;
+  }
+}
+
+/* ============================= */
+/* Welcome */
+/* ============================= */
+
+.welcome {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Centers content vertically on the screen */
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.welcome h1 {
+  margin-bottom: 10px; /* Adds space between h1 and p */
+  color: #bfedef;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.welcome p {
+  max-width: 600px; /* Ensures readable text width */
+}
+
+/* ============================= */
+/* Footer */
+/* ============================= */
+
+footer {
+  background-color: #222;
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column; /* Ensures stacked content if needed */
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.2); /* Shadow positioned below */
+  position: relative; /* Change to 'fixed' or 'absolute' if necessary */
+  bottom: 0;
+  text-align: center;
+  color: #bfedef; /* Ensures text is readable */
+}
+
+/* ============================= */
+/* Categories */
+/* ============================= */
+
+.categories {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px; /* Adjust width as needed */
+  text-align: center;
+  margin: 20px auto;
+}
+
+.categories h3 {
+  color: #bfedef;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* Grid layout for categories */
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 3 columns */
+  gap: 10px;
+  justify-content: center;
+}
+
+.categoryItem {
+  background-color: #333;
+  color: #bfedef;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.categoryItem:hover {
+  background-color: #0d5857;
+  transform: scale(1.05);
+}
+
+/* Responsive: Adjust to 2 columns on smaller screens */
+@media (max-width: 500px) {
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: rotate(360deg);
-  }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* ============================= */
+/* Categories */
+/* ============================= */
+
+/* Form Container */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: 20px auto;
 }
 
-.card {
-  padding: 2em;
+/* Label Styling */
+form label {
+  color: #bfedef;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
-.read-the-docs {
-  color: #888;
+/* Input Field */
+.form-search {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #121212;
+  border-radius: 5px;
+  background-color: #333;
+  color: #bfedef;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-search:focus {
+  border-color: #bfedef;
+}
+
+/* Button Styling */
+.search-btn {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 16px;
+  background-color: #0d5857;
+  color: #bfedef;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-btn:hover {
+  background-color: #073b3a;
+  transform: scale(1.05);
 }

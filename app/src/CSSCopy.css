@@ -1,0 +1,139 @@
+/* ============================= */
+/* Global Styles */
+/* ============================= */
+#root {
+  width: auto;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #bfedef;
+}
+
+/* ============================= */
+/* Navigation Bar */
+/* ============================= */
+nav {
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  color: #bfedef;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+nav a:hover {
+  background-color: #555;
+}
+
+/* ============================= */
+/* Food Card Container */
+/* ============================= */
+.cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center; /* Centers items in the container */
+}
+
+/* ============================= */
+/* Food Card Styling */
+/* ============================= */
+.foodCard {
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  padding: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Keeps cards responsive */
+  gap: 15px;
+  border-radius: 8px;
+}
+
+.foodCard img {
+  width: 120px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.foodCard h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.foodCard div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ============================= */
+/* Food Card Button */
+/* ============================= */
+.foodCard button {
+  padding: 8px 12px;
+  background-color: #0d5857;
+  color: #bfedef;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.foodCard button:hover {
+  background-color: #073b3a;
+}
+
+/* ============================= */
+/* Light Mode & Dark Mode */
+/* ============================= */
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #121212;
+  color: #bfedef;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ============================= */
+/* Responsive Design */
+/* ============================= */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .foodCard {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .foodCard img {
+    width: 100%;
+    max-width: 200px;
+  }
+}

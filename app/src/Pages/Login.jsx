@@ -1,5 +1,14 @@
-const Login = () => {
-    return <h1>Login Page</h1>
-}
+import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 
-export default Login
+const Login = () => {
+  return (
+    <>
+      <NavBar />
+      <h1>Login Page</h1>
+      <Footer />
+    </>
+  );
+};
+
+export default Login;

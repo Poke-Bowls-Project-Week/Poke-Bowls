@@ -1,17 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-
-import { BrowserRouter, RouterProvider } from "react-router-dom";
-
+import ThemeProvider from "./context/ThemeProvider.jsx";
 import "./index.css";
-import App from "./App.jsx";
-import HomePage from "./Pages/Home.jsx";
-import NFP from "./Pages/NotFoundPage.jsx";
+import App from "./App";
 
 createRoot(document.getElementById("root")).render(
-  // <StrictMode>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-  // </StrictMode>
+  <StrictMode>
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  </StrictMode>
 );

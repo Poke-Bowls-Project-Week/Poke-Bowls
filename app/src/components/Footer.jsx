@@ -1,10 +1,8 @@
 const Footer = () => {
   return (
-    <div>
-      <Footer>
-        <button>To Top</button>
-      </Footer>
-    </div>
+    <footer>
+      <button>To Top</button>
+    </footer>
   );
 };
 

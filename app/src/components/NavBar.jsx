@@ -1,23 +1,21 @@
-import { useDebugValue, useState } from "react";
+// import { useDebugValue, useState } from "react";
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
     <nav>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/Recipes">Recipes</Link>
-        </li>
-        <li>
-          <Link to="/Account">Account</Link>
-        </li>
-        <li>
-          <Link to="/Login">Login</Link>
-        </li>
-      </ul>
+      <li>
+        <Link to={"/"}>Home</Link>
+      </li>
+      <li>
+        <Link to={"/recipes"}>Recipes</Link>
+      </li>
+      <li>
+        <Link to={"/account"}>Account</Link>
+      </li>
+      <li>
+        <Link to={"/login"}>Login</Link>
+      </li>
     </nav>
   );
 };

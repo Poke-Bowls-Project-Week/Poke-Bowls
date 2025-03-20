@@ -1,6 +1,6 @@
 const setLocalStorageKey = (key, value) => {
   // the key will be savedRecipes
-  localStorage.setItemI(key, JSON.stringify(value));
+  localStorage.setItem(key, JSON.stringify(value));
 };
 
 const getLocalStorageKey = (key) => {

@@ -5,7 +5,7 @@ const Account = () => {
   return (
     <>
       <NavBar />
-      <h1>Account Page</h1>
+      <h1 className="pageTitle">Account Page</h1>
       <Footer />
     </>
   );

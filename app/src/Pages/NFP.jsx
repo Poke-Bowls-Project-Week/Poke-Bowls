@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const NFP = () => {
   return (
     <div>
-      <h1 style={{ color: "#646cff" }}>Error! Page Not Found</h1>
+      <h1 className="pageTitle">Error! Page Not Found</h1>
       <button>
         <Link to="/">Back to Home</Link>
       </button>

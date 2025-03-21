@@ -1,21 +1,28 @@
 import { useState, useEffect } from "react";
 import { getSingleFoodId } from "../utils/adapters";
 
-const ModalInfo = ({ idMeal }) => {
-  const [data, setData] = useState(null);
+const ModalInfo = ({ data }) => {
+  console.log("data passed to modal: ", data);
+  // const [data, setData] = useState({});
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (!idMeal) return; // Prevents API call with an undefined idMeal
-      try {
-        const response = await getSingleFoodId(idMeal);
-        setData(response.meals[0]); // Store first meal object
-      } catch (error) {
-        console.error("Error fetching food details:", error);
-      }
-    };
-    fetchData();
-  }, [idMeal]);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     if (!idMeal) return; // Prevent API call with an undefined idMeal
+  //     try {
+  //       const response = await getSingleFoodId(idMeal);
+  //       if (response[0].meals) {
+  //         setData(response[0].meals); // Store first meal object
+  //         console.log("Data For modal: ", data);
+  //       } else {
+  //         console.error("Invalid response format:", response);
+  //       }
+  //     } catch (error) {
+  //       console.error("Error fetching food details:", error);
+  //     }
+  //   };
+
+  //   fetchData();
+  // }, [idMeal]);
 
   if (!data) return <p>Loading...</p>;
 
@@ -28,7 +35,7 @@ const ModalInfo = ({ idMeal }) => {
         <iframe
           width="320"
           height="240"
-          src={data.strYoutube.replace("watch?v=", "embed/")} // Converts URL to embeddable format
+          src={data.strYoutube.replace("watch?v=", "embed/")}
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -39,16 +46,22 @@ const ModalInfo = ({ idMeal }) => {
   );
 };
 
-const Modal = ({ isOpen, onClose, idMeal }) => {
+const Modal = ({ isOpen, onClose, idMeal, data }) => {
   if (!isOpen) return null; // Don't render if modal is closed
 
+  const handleOverlayClick = (e) => {
+    if (e.target.classList.contains("modal-overlay")) {
+      onClose();
+    }
+  };
+
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay" onClick={handleOverlayClick}>
       <div className="modal-content">
+        <ModalInfo data={data} />
         <button className="close-button" onClick={onClose}>
           &times;
         </button>
-        <ModalInfo idMeal={idMeal} />
       </div>
     </div>
   );

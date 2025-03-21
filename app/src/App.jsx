@@ -25,8 +25,8 @@ function App() {
 
   return (
     <>
-      {/* <main className={mainClass}> */}
-      {/* <button onClick={toggleTheme}>{mainClass}</button> */}
+      {/* <main className={mainClass}>
+        <button onClick={toggleTheme}>{mainClass}</button> */}
       <RouterProvider router={router} />
       {/* </main> */}
     </>

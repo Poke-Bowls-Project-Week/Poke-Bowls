@@ -7,14 +7,21 @@ import CategoryRender from "../components/CategoryRender";
 
 const Recipes = () => {
   const [foods, setFoods] = useState([]);
-  // I want to use this foods value to make a card for each Item in the foods array with the
-  // relevant info
+  const [categoriesArr, setCategoriesArr] = useState([]);
+  const [category, setCategory] = useState(""); // Controlled input value
 
   return (
     <>
       <NavBar />
-      <h1>Recipes Page</h1>
-      <FoodRender foods={foods} setFoods={setFoods} />
+      <h1 className="pageTitle">Recipes Page</h1>
+      <FoodRender
+        foods={foods}
+        setFoods={setFoods}
+        categoriesArr={categoriesArr}
+        setCategoriesArr={setCategoriesArr}
+        category={category}
+        setCategory={setCategory}
+      />
       <Footer />
     </>
   );

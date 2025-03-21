@@ -1,26 +1,36 @@
+import { useState } from "react";
 import { getSingleFoodId } from "../utils/adapters";
-import { useEffect } from "react";
+import Modal from "./Modal";
 
 const DetailsButton = ({ idMeal }) => {
-  let data;
+  const [data, setData] = useState(null);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const userCLick = async () => {
-    console.log("Opening Modal");
-    console.log(data);
-    // This is where the show modal logic goes making sure the
+  const userClick = async () => {
+    console.log("Opening Modal...");
+    try {
+      const response = await getSingleFoodId(idMeal);
+      console.log("response: ", response[0].meals[0]);
+
+      if (response[0].meals[0]) {
+        setData(response[0].meals[0]); // Store food details in state
+        setIsOpen(true); // Open modal
+      } else {
+        console.error("Invalid API response:", response);
+      }
+    } catch (error) {
+      console.error("Error fetching food details:", error);
+    }
   };
 
-  useEffect(() => {
-    const handleClick = async () => {
-      data = await getSingleFoodId(idMeal);
-      data = data[0].meals;
-      console.log("from Details button: ", data);
-    };
-
-    handleClick();
-  }, [userCLick]);
-
-  return <button onClick={userCLick}>Show Me The Recipe!</button>;
+  return (
+    <>
+      <button onClick={userClick}>Show Me The Recipe!</button>
+      {isOpen && (
+        <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} data={data} />
+      )}
+    </>
+  );
 };
 
 export default DetailsButton;

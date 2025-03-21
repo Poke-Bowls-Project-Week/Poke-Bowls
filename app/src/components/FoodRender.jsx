@@ -3,10 +3,14 @@ import { useState } from "react";
 import FoodCard from "./FoodCard";
 import CategoryRender from "./CategoryRender";
 
-const FoodRender = ({ foods, setFoods }) => {
-  const [category, setCategory] = useState(""); // Controlled input value
-  // Stores fetched food data
-
+const FoodRender = ({
+  foods,
+  setFoods,
+  categoriesArr,
+  setCategoriesArr,
+  category,
+  setCategory,
+}) => {
   // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -25,31 +29,18 @@ const FoodRender = ({ foods, setFoods }) => {
     }
   };
 
-  // Handle input change
-  const handleChange = (event) => {
-    setCategory(event.target.value);
-  };
-
   // error when info isn't valid
   return (
     <>
-      <div className="searchForm">
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="form-search">Category of Food: </label>
-          <input
-            type="text"
-            id="form-search"
-            className="form-search"
-            value={category}
-            onChange={handleChange}
-          />
-          <button type="submit" className="search-btn">
-            Get Recipes
-          </button>
-        </form>
-      </div>
       <div>
-        <CategoryRender />
+        <CategoryRender
+          categoriesArr={categoriesArr}
+          setCategoriesArr={setCategoriesArr}
+          category={category}
+          setCategory={setCategory}
+          setFoods={setFoods}
+          foods={foods}
+        />
         <FoodCard foods={foods} />
       </div>
     </>

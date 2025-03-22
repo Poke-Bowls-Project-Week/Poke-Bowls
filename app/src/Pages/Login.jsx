@@ -1,11 +1,12 @@
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import LoginForm from "../components/LoginForm";
 
 const Login = () => {
   return (
     <>
       <NavBar />
-      <h1 className="pageTitle">Login Page</h1>
+      <LoginForm />
       <Footer />
     </>
   );

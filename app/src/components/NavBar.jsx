@@ -10,12 +10,12 @@ const NavBar = () => {
       <li>
         <Link to={"/recipes"}>Recipes</Link>
       </li>
-      <li>
+      {/* <li>
         <Link to={"/account"}>Account</Link>
       </li>
       <li>
         <Link to={"/login"}>Login</Link>
-      </li>
+      </li> */}
     </nav>
   );
 };

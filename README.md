@@ -130,51 +130,51 @@ See the [Agile Methodology Reflection document](./agile-methodology-reflection.m
 ## Tech Checklist
 
 ### Project Fundamentals (7)
-- [ ] Used Vite for this project
-- [ ] Used React
-- [ ] Used React Router for client side routing
-- [ ] Made a fetch to get multiple resources
-- [ ] Made a fetch to get a single, specific resource
+- [ * ] Used Vite for this project
+- [ * ] Used React
+- [ * ] Used React Router for client side routing
+- [ * ] Made a fetch to get multiple resources
+- [ * ] Made a fetch to get a single, specific resource
 - [ ] Made a third fetch for whatever you want
-- [ ] Use Context at least once (set up a dark mode)
-- [ ] **Bonus: Were able to get it deployed in a functional state**
+- [ * ] Use Context at least once (set up a dark mode)
+- [  ] **Bonus: Were able to get it deployed in a functional state**
 
 ### React Fundamentals (8)
-- [ ] Created at least 3 components
-- [ ] Have all components in their own files (1 export per file)
-- [ ] Passed props to a component at least 3 times
-  - [ ] 1st check box
-  - [ ] 2nd check box
-  - [ ] 3rd check box
-- [ ] Rendered an array of items to the screen at least once
-- [ ] At no point did you ever use any vanilla DOM JS methods
+- [ * ] Created at least 3 components
+- [ * ] Have all components in their own files (1 export per file)
+- [ * ] Passed props to a component at least 3 times
+  - [ * ] 1st check box
+  - [ * ] 2nd check box
+  - [ * ] 3rd check box
+- [ * ] Rendered an array of items to the screen at least once
+- [ * ] At no point did you ever use any vanilla DOM JS methods
 
 ### State Management (10)
-- [ ] The `useContext` hook is used at least once
-- [ ] Used the `useEffect` hook at least 2 times
-  - [ ] 1st check box
-  - [ ] 2nd check box
-- [ ] Used the `useState` hook at least 3 times
-  - [ ] 1st check box
-  - [ ] 2nd check box
-  - [ ] 3rd check box
-- [ ] Lifted state up out of a component at least once
+- [ * ] The `useContext` hook is used at least once
+- [ * ] Used the `useEffect` hook at least 2 times
+  - [ * ] 1st check box
+  - [ * ] 2nd check box
+- [ * ] Used the `useState` hook at least 3 times
+  - [ * ] 1st check box
+  - [ * ] 2nd check box
+  - [ * ] 3rd check box
+- [ * ] Lifted state up out of a component at least once
      - That is a fancy way of saying that you had the state of a component and then passed down the getter and setter functions for the hook to a child component. You've seen us do this!
-- [ ] A Context is created to manage global state
+- [ * ] A Context is created to manage global state
  
      
 
 ### React Router (3)
-- [ ] Had at least 2 different pages in the application
-- [ ] Used the proper `Link` components to navigate between pages
+- [ * ] Had at least 2 different pages in the application
+- [ * ] Used the proper `Link` components to navigate between pages
 - [ ] Used the `useParams` hook at least once
 
 ### Forms & Events (5)
-- [ ] Handled at least 2 non-submission events (clicking on something causes a UI change)
-  - [ ] 1st check box
-  - [ ] 2nd check box
-- [ ] Handled form submission event properly with React syntax
-- [ ] Demonstrated a working controlled Form
+- [ * ] Handled at least 2 non-submission events (clicking on something causes a UI change)
+  - [ * ] 1st check box
+  - [ * ] 2nd check box
+- [ * ] Handled form submission event properly with React syntax
+- [ * ] Demonstrated a working controlled Form
 
 ### Style (15)
 - [ ] Navigation bar fits cleanly on mobile and desktop

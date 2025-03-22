@@ -3,26 +3,23 @@ import { getSingleFoodId } from "../utils/adapters";
 
 const ModalInfo = ({ data }) => {
   console.log("data passed to modal: ", data);
-  // const [data, setData] = useState({});
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     if (!idMeal) return; // Prevent API call with an undefined idMeal
-  //     try {
-  //       const response = await getSingleFoodId(idMeal);
-  //       if (response[0].meals) {
-  //         setData(response[0].meals); // Store first meal object
-  //         console.log("Data For modal: ", data);
-  //       } else {
-  //         console.error("Invalid response format:", response);
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching food details:", error);
-  //     }
-  //   };
+  const ingredientArr = [];
+  const measureArr = [];
 
-  //   fetchData();
-  // }, [idMeal]);
+  let i = 0;
+
+  while (i <= 20) {
+    if (data[`strIngredient${i}`]) {
+      ingredientArr.push(data[`strIngredient${i}`]);
+      measureArr.push(data[`strMeasure${i}`]);
+    }
+
+    i++;
+  }
+
+  console.log("testing testing: ", ingredientArr);
+  console.log("testing testing: ", measureArr);
 
   if (!data) return <p>Loading...</p>;
 
@@ -30,6 +27,14 @@ const ModalInfo = ({ data }) => {
     <div className="modalInfo">
       <img src={data.strMealThumb} alt={data.strMeal} />
       <h5>{data.strMeal}</h5>
+      <ul>
+        {ingredientArr &&
+          ingredientArr.map((ingredient, index) => (
+            <li key={index}>
+              {ingredient}: {measureArr[index]}
+            </li>
+          ))}
+      </ul>
       <p>{data.strInstructions}</p>
       {data.strYoutube && (
         <iframe

@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <footer>
-      <button>To Top</button>
+      <p>Poké Bowls</p>
     </footer>
   );
 };

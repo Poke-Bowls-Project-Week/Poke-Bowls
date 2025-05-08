@@ -18,6 +18,15 @@ const ModalInfo = ({ data }) => {
     i++;
   }
 
+  const speak = (text) => {
+    if ("speechSynthesis" in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      window.speechSynthesis.speak(utterance);
+    } else {
+      alert("Sorry, your browser does not support speech synthesis.");
+    }
+  };
+
   console.log("testing testing: ", ingredientArr);
   console.log("testing testing: ", measureArr);
 
@@ -26,7 +35,8 @@ const ModalInfo = ({ data }) => {
   return (
     <div className="modalInfo">
       <img src={data.strMealThumb} alt={data.strMeal} />
-      <h5>{data.strMeal}</h5>
+      <h5 onClick={() => speak(data.strMeal)}>{data.strMeal}</h5>
+
       <ul>
         {ingredientArr &&
           ingredientArr.map((ingredient, index) => (

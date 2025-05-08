@@ -1,7 +1,7 @@
 const Welcome = () => {
   return (
     <div className="welcome">
-      <h1>Welcome to Poké Bowls</h1>
+      <h1>Welcome to Poke Bowls</h1>
       <p>
         <strong>Poké Bowls</strong>, your go-to destination for discovering some
         of the most popular and mouth-watering recipes from around the world!

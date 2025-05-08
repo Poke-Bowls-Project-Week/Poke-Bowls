@@ -1,5 +1,5 @@
 const Footer = () => {
-  return <footer>{<p>Poké Bowls</p>}</footer>;
+  return <footer></footer>;
 };
 
 export default Footer;

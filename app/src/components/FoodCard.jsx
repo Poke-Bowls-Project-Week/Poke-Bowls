@@ -14,7 +14,7 @@ const FoodCard = ({ foods }) => {
         {(foods || []).length > 0 ? (
           foods.map((item, index) => (
             <div className="foodCard" key={index}>
-              <h4>{item.strMeal}</h4>
+              <h3>{item.strMeal}</h3>
               <img src={item.strMealThumb} alt={item.strMeal} width={100} />
               {/* <Modal isOpen={isOpen} onClose={onClose}/> */}
               <DetailsButton idMeal={item.idMeal} />
